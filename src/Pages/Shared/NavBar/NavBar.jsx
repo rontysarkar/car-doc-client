@@ -12,6 +12,9 @@ const NavBar = () => {
     <li><Link to={'/about'}>Contact</Link></li>
     <li><Link to={'/login'}>login</Link></li>
     <li><Link to={'/signUp'}>signUp</Link></li>
+    {
+        user && <li><Link to={'/booking'}>Booking</Link></li>
+    }
     </>
 
     const handleLogOut = () =>{

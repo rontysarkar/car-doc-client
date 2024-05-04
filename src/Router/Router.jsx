@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import CheckOut from "../Pages/CheckOut/CheckOut";
+import Booking from "../Pages/Booking/Booking";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
     {
@@ -24,8 +26,13 @@ const router = createBrowserRouter([
         },
         {
           path:'/checkout/:id',
-          element:<CheckOut/>,
+          element:<PrivetRoutes><CheckOut/></PrivetRoutes>,
           loader:({params})=>fetch(`http://localhost:5000/checkout/${params.id}`)
+        },
+        {
+          path:'/booking',
+          element:<PrivetRoutes><Booking/></PrivetRoutes>,
+
         }
       ]
     },
